@@ -8,9 +8,9 @@ import domtoimage from 'dom-to-image';
 import FileSaver from 'file-saver';
 
 const imageList = {
-  one: 'http://res.cloudinary.com/hd0i4ur1p/image/upload/v1498746427/the-most-interesting-man-in-the-world_zhzct4.jpg',
-  two: 'http://res.cloudinary.com/stan/image/upload/v1498688003/one-does-not-simply_tpm9jc.jpg',
-  three: 'http://res.cloudinary.com/stan/image/upload/v1498742630/the-most-interesting-man-in-the-world_auwd26.jpg'
+  one: 'https://res.cloudinary.com/hd0i4ur1p/image/upload/v1498746427/the-most-interesting-man-in-the-world_zhzct4.jpg',
+  two: 'https://res.cloudinary.com/stan/image/upload/v1498688003/one-does-not-simply_tpm9jc.jpg',
+  three: 'https://res.cloudinary.com/stan/image/upload/v1498742630/the-most-interesting-man-in-the-world_auwd26.jpg'
 };
 
 class Main extends Component {
