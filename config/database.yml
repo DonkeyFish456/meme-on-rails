@@ -23,6 +23,8 @@ default: &default
 
 development:
   <<: *default
+  username: mudblood
+  password: password
   database: meme-on-rails_development
 
   # The specified database role being used to connect to postgres.

@@ -8,10 +8,20 @@ class Images extends Component {
     super(props);
     this.state = {
       mainImage: '',
-      images: ''
+      images: []
     };
   }
-  componentDidMount() {}
+
+  componentDidMount() {
+    const url = 'images';
+
+    fetch(url)
+      .then(resp => resp.json()) // Transform the data into json
+      .then(data => {
+        console.log(data);
+        this.setState({ images: data });
+      });
+  }
   render() {
     const { handleImageClick, handleImageSelect } = this.props;
     const { mainImage, images } = this.state;
@@ -31,7 +41,7 @@ class Images extends Component {
             </div>
             <div style={defaultStyles.imageArea}>
               {map(images, (image, key) =>
-                <img key={key} onClick={handleImageSelect} style={defaultStyles.imageThumbnail} src={image} />
+                <img key={key} onClick={handleImageSelect} style={defaultStyles.imageThumbnail} src={image.url} />
               )}
             </div>
           </div>
