@@ -90,7 +90,7 @@ class Canvas extends Component {
         color: `rgba(${bottomTextColorRed},${bottomTextColorGreen},${bottomTextColorBlue},${bottomTextColorAlpha})`
       },
       memebackground: {
-        backgroundImage: `url(${'http://res.cloudinary.com/hd0i4ur1p/image/upload/c_thumb,h_500,w_500/v1499013930/' +
+        backgroundImage: `url(${'https://res.cloudinary.com/hd0i4ur1p/image/upload/c_thumb,h_500,w_500/v1499013930/' +
           image})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
