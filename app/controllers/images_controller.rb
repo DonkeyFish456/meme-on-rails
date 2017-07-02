@@ -15,7 +15,15 @@ end
 
 def create
   @image = Image.new
-  @image.url = params[:image][:name]
+
+  @upload = Cloudinary::Uploader.upload(params[:image][:file])#, :public_id => params[:image][:file].original_filename)
+
+
+
+  @image.url = @upload['public_id'] + '.' + @upload['format']
+  # @image.url = params[:image][:file].original_filename
+
+
 
   if @image.save
     redirect_to images_path

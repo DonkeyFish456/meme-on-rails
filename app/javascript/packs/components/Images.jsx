@@ -41,7 +41,15 @@ class Images extends Component {
             </div>
             <div style={defaultStyles.imageArea}>
               {map(images, (image, key) =>
-                <img key={key} onClick={handleImageSelect} style={defaultStyles.imageThumbnail} src={image.url} />
+                <div key={key} onClick={handleImageSelect} value={image.url}>
+                  <img
+                    key={key}
+                    style={defaultStyles.imageThumbnail}
+                    src={
+                      'http://res.cloudinary.com/hd0i4ur1p/image/upload/c_thumb,h_150,w_150/v1499013930/' + image.url
+                    }
+                  />
+                </div>
               )}
             </div>
           </div>

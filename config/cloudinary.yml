@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hd0i4ur1p
+  api_key: '516456922927719'
+  api_secret: BPeLEJY_qyk_-46wS_VSA0rAcT0
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hd0i4ur1p
+  api_key: '516456922927719'
+  api_secret: BPeLEJY_qyk_-46wS_VSA0rAcT0
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hd0i4ur1p
+  api_key: '516456922927719'
+  api_secret: BPeLEJY_qyk_-46wS_VSA0rAcT0
+  enhance_image_tag: true
+  static_image_support: false

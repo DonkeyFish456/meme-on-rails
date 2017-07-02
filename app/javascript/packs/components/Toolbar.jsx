@@ -38,7 +38,15 @@ class Toolbar extends Component {
     } = this.props;
     let backgroundImage = '';
     if (image) {
-      backgroundImage = <img key="image1" src={image} style={defaultStyles.toolbarImage} alt="" />;
+      backgroundImage = (
+        <img
+          key="image1"
+          src={'http://res.cloudinary.com/hd0i4ur1p/image/upload/c_thumb,h_150,w_150/v1499013930/' + image}
+          // src={image}
+          style={defaultStyles.toolbarImage}
+          alt=""
+        />
+      );
     } else {
       backgroundImage = (
         <div key="image2" style={defaultStyles.toolbarImage}>
@@ -56,18 +64,21 @@ class Toolbar extends Component {
             <div key="1" onClick={handleCreatingImage} style={defaultStyles.miniToolbarIcon}>
               <FontAwesome name="download" />
             </div>
-            <div key="2" style={defaultStyles.miniToolbarIcon}><FontAwesome name="share-alt" /></div>
-            <div key="3" style={defaultStyles.miniToolbarIcon}><FontAwesome name="cogs" /></div>
+            <div key="2" style={defaultStyles.miniToolbarIcon}>
+              <FontAwesome name="share-alt" />
+            </div>
+            <div key="3" style={defaultStyles.miniToolbarIcon}>
+              <FontAwesome name="cogs" />
+            </div>
             <div key="4" onClick={handleResetAll} style={defaultStyles.miniToolbarIcon}>
               <FontAwesome name="trash-o" />
             </div>
-
           </div>
           <div style={defaultStyles.miniToolbarBottom}>
-            <div key="5" style={defaultStyles.miniToolbarIconBottom}><FontAwesome name="github" /></div>
-
+            <div key="5" style={defaultStyles.miniToolbarIconBottom}>
+              <FontAwesome name="github" />
+            </div>
           </div>
-
         </div>
         <div style={defaultStyles.toolbar}>
           <div onClick={handleImageClick}>

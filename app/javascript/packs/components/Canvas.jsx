@@ -90,7 +90,8 @@ class Canvas extends Component {
         color: `rgba(${bottomTextColorRed},${bottomTextColorGreen},${bottomTextColorBlue},${bottomTextColorAlpha})`
       },
       memebackground: {
-        backgroundImage: `url(${image})`,
+        backgroundImage: `url(${'http://res.cloudinary.com/hd0i4ur1p/image/upload/c_thumb,h_500,w_500/v1499013930/' +
+          image})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         height: '500px',
@@ -122,7 +123,6 @@ class Canvas extends Component {
                     </div>
                   </Draggable>
                 : null}
-
             </div>
             <div style={defaultStyles.memeBottomText}>
               {bottomText
@@ -142,13 +142,13 @@ class Canvas extends Component {
     } else {
       backgroundImage = (
         <div style={defaultStyles.canvasLogo}>
-          <FontAwesome name="image" /><div style={defaultStyles.canvasItem}>Select an Image</div>
+          <FontAwesome name="image" />
+          <div style={defaultStyles.canvasItem}>Select an Image</div>
         </div>
       );
     }
     return (
       <div className="canvas-container" style={defaultStyles.canvas}>
-
         <div className="my-photo-container" style={{ height: '500px', width: '500px' }}>
           {backgroundImage}
         </div>

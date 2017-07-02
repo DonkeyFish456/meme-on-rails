@@ -17,7 +17,7 @@ class Main extends Component {
   constructor() {
     super();
     this.state = {
-      image: imageList.one,
+      image: '', //imageList.one,
       textImage: '',
       topText: {
         title: '',
@@ -90,8 +90,11 @@ class Main extends Component {
   };
   handleImageSelect = e => {
     e.preventDefault();
+    const cloudinaryLink = 'http://res.cloudinary.com/hd0i4ur1p/image/upload/c_thumb,h_150,w_150/v1499013930/';
+    const imageName = e.target.src.replace(cloudinaryLink, '');
+    console.log(imageName);
     this.setState({
-      image: e.target.src,
+      image: imageName,
       displayImages: !this.state.displayImages,
       topText: { title: document.getElementsByClassName('textArea')[0].value, size: '70px' },
       bottomText: { title: document.getElementsByClassName('textArea')[1].value, size: '70px' }
