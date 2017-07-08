@@ -1,8 +1,8 @@
 // Note: You must restart bin/webpack-dev-server for changes to take effect
 
-const merge = require('webpack-merge')
-const sharedConfig = require('./shared.js')
-const { settings, output } = require('./configuration.js')
+const merge = require('webpack-merge');
+const sharedConfig = require('./shared.js');
+const { settings, output } = require('./configuration.js');
 
 module.exports = merge(sharedConfig, {
   devtool: 'cheap-eval-source-map',
@@ -28,5 +28,11 @@ module.exports = merge(sharedConfig, {
     watchOptions: {
       ignored: /node_modules/
     }
-  }
-})
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      CLOUDINARY_API_KEY: JSON.stringify('CLOUDINARY_API_KEY'),
+      CLOUDINARY_PRESET: JSON.stringify('CLOUDINARY_PRESET')
+    })
+  ]
+});

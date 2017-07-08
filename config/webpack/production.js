@@ -32,8 +32,10 @@ module.exports = merge(sharedConfig, {
       test: /\.(js|css|html|json|ico|svg|eot|otf|ttf)$/
     }),
     new webpack.DefinePlugin({
-      CLOUDINARY_API_KEY: JSON.stringify(process.env.CLOUDINARY_API_KEY),
-      CLOUDINARY_PRESET: JSON.stringify(process.env.CLOUDINARY_PRESET)
+      'process.env': {
+        CLOUDINARY_API_KEY: JSON.stringify(process.env.CLOUDINARY_API_KEY),
+        CLOUDINARY_PRESET: JSON.stringify(process.env.CLOUDINARY_PRESET)
+      }
     })
   ]
 });
