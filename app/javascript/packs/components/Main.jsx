@@ -58,6 +58,7 @@ class Main extends Component {
     this.handleCreatePreview = this.handleCreatePreview.bind(this);
     this.handlePreviewToggle = this.handlePreviewToggle.bind(this);
     this.handleCreatingImage = this.handleCreatingImage.bind(this);
+    this.handleImageUpload = this.handleImageUpload.bind(this);
   }
   handleTextChangeTop(e) {
     this.setState({ topText: { title: e.target.value } });
@@ -99,6 +100,13 @@ class Main extends Component {
       topText: { title: document.getElementsByClassName('textArea')[0].value, size: '70px' },
       bottomText: { title: document.getElementsByClassName('textArea')[1].value, size: '70px' }
     });
+  };
+  handleImageUpload = image => {
+    this.setState({
+      displayImages: !this.state.displayImages,
+      image: image
+    });
+    console.log('blah blah blah');
   };
   handleResetAll = e => {
     document.getElementsByClassName('textArea')[0].value = '';
@@ -204,7 +212,11 @@ class Main extends Component {
         />
         <div>
           {displayImages
-            ? <Images handleImageClick={this.handleImageClick} handleImageSelect={this.handleImageSelect} />
+            ? <Images
+                handleImageUpload={this.handleImageUpload}
+                handleImageClick={this.handleImageClick}
+                handleImageSelect={this.handleImageSelect}
+              />
             : null}
         </div>
         <div>

@@ -1,4 +1,5 @@
 class ImagesController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
 def index
   @images = Image.all
@@ -14,21 +15,16 @@ def new
 end
 
 def create
-  @image = Image.new
+  @image = Image.new(image_params)
 
-  @upload = Cloudinary::Uploader.upload(params[:image][:file])#, :public_id => params[:image][:file].original_filename)
-
-
-
-  @image.url = @upload['public_id'] + '.' + @upload['format']
-  # @image.url = params[:image][:file].original_filename
-
-
+  # @upload = Cloudinary::Uploader.upload(params[:image][:file])#, :public_id => params[:image][:file].original_filename)
+  #
+  # @image.url = @upload['public_id'] + '.' + @upload['format']
 
   if @image.save
-    redirect_to images_path
+    render json: @image
   else
-    render :new
+    render json: @image.errors, status: :unprocessable_entity
   end
 end
 
@@ -39,6 +35,12 @@ def update
 end
 
 def detroy
+end
+
+private
+
+def image_params
+  params.permit(:url)
 end
 
 end
