@@ -75,9 +75,14 @@ class Toolbar extends Component {
             </div>
           </div>
           <div style={defaultStyles.miniToolbarBottom}>
-            <div key="5" style={defaultStyles.miniToolbarIconBottom}>
+            <a
+              href="https://github.com/DonkeyFish456/meme-on-rails"
+              key="5"
+              style={defaultStyles.miniToolbarIconBottom}
+              target="_blank"
+            >
               <FontAwesome name="github" />
-            </div>
+            </a>
           </div>
         </div>
         <div style={defaultStyles.toolbar}>
@@ -243,6 +248,9 @@ const defaultStyles = {
     alignItems: 'center',
     justifyContent: 'center',
     boxSizing: 'border-box',
+    color: 'rgb(255, 255, 255)',
+    textDecoration: 'none',
+    cursor: 'pointer',
     ':hover': {
       backgroundColor: 'rgb(51, 51, 51)',
       borderTop: '1px solid rgb(34, 34, 34)',

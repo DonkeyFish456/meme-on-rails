@@ -49,12 +49,9 @@ class Images extends Component {
           url: imageName
         })
       }).then(data => {
-        console.log(imageName, 'test 22');
-
         this.props.handleImageUpload(imageName);
       });
-
-      console.log('success', imageName);
+      console.log('success', event);
     });
     request.addEventListener('error', event => {
       console.error('Error with upload', event);
@@ -67,12 +64,10 @@ class Images extends Component {
   componentDidMount() {
     const url = 'images';
 
-    fetch(url)
-      .then(resp => resp.json()) // Transform the data into json
-      .then(data => {
-        console.log(data);
-        this.setState({ images: data });
-      });
+    fetch(url).then(resp => resp.json()).then(data => {
+      console.log(data);
+      this.setState({ images: data });
+    });
   }
   render() {
     const { handleImageClick, handleImageSelect } = this.props;
